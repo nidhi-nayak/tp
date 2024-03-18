@@ -1,7 +1,6 @@
 package recipeio.recipe;
 
-import ui.UI;
-
+import recipeio.ui.UI;
 import java.util.ArrayList;
 
 
