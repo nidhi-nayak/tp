@@ -11,7 +11,7 @@ public class CommandConstants {
     public static final String INVALID_FIND_ERROR = "Sorry, please follow one of the find command formats." +
             "\n\tAccepted find parameters are: 'kw' and 'date'.";
     public static final String NO_MATCHES_PROMPT = "Please ensure that you have inputted a full word.";
-    public static final String NO_ALLERGIES_SUGGESTION = "Also, make sure that your allergies is in singular form. " +
+    public static final String NO_ALLERGIES_SUGGESTION = "Please make sure that your allergies is in singular form. " +
             "(eg: egg NOT eggs)";
     public static final String VALID_KEYWORD_MATCHES = "Here are your matches with keyword: ";
     public static final String VALID_DATE_MATCHES = "Here are your matches with date: ";
