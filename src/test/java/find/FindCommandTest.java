@@ -62,9 +62,9 @@ public class FindCommandTest {
 
     @Test
     public void testFindByMealExistItem() {
-        String expected = "\tThese recipes have the category breakfast"
+        String expected = "These recipes have the category breakfast"
                 + System.lineSeparator()
-                + "\t\t" + "Pho / added on 2024-04-01 / url: www.pho.com"
+                + "\t" + "Pho / added on 2024-04-01 / url: www.pho.com"
                 + System.lineSeparator();
         ByteArrayOutputStream testOut = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(testOut);
@@ -79,7 +79,7 @@ public class FindCommandTest {
 
     @Test
     public void testFindByMealNotExistItem() {
-        String expected = "\tThere's no recipe with category Appetizer" +
+        String expected = "There's no recipe with category Appetizer" +
                 System.lineSeparator();
         ByteArrayOutputStream testOut = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(testOut);
@@ -95,13 +95,13 @@ public class FindCommandTest {
     @Test
     void testInvalidMealCat() {
         String expected = "Invalid meal category!" + System.lineSeparator()
-                + "\tAccepted meal categories are:" + System.lineSeparator()
-                + "\t\tBreakfast" + System.lineSeparator()
-                + "\t\tLunch" + System.lineSeparator()
-                + "\t\tDinner" + System.lineSeparator()
-                + "\t\tDessert" + System.lineSeparator()
-                + "\t\tAppetizer" + System.lineSeparator()
-                + "\t\tGeneral" + System.lineSeparator();
+                + "Accepted meal categories are:" + System.lineSeparator()
+                + "\tBreakfast" + System.lineSeparator()
+                + "\tLunch" + System.lineSeparator()
+                + "\tDinner" + System.lineSeparator()
+                + "\tDessert" + System.lineSeparator()
+                + "\tAppetizer" + System.lineSeparator()
+                + "\tGeneral" + System.lineSeparator();
         ByteArrayOutputStream testOut = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(testOut);
         System.setOut(printStream);

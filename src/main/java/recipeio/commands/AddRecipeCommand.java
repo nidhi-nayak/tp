@@ -1,7 +1,6 @@
 package recipeio.commands;
 
 import recipeio.recipe.Recipe;
-import recipeio.ui.UI;
 
 import java.util.ArrayList;
 
