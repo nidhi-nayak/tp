@@ -1,7 +1,6 @@
 package recipeio.constants;
 
 public class RecipeListConstants {
-    public static final int MAX_RECIPES = 99999;
     public static final String ADD_COMMAND = "add";
     public static final String DELETE_COMMAND = "delete";
     public static final String LIST_COMMAND = "list";

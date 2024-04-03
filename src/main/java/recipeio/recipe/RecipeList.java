@@ -24,7 +24,6 @@ import static recipeio.constants.RecipeListConstants.DELETE_COMMAND;
 import static recipeio.constants.RecipeListConstants.FIND_COMMAND;
 import static recipeio.constants.RecipeListConstants.FILTER_COMMAND;
 import static recipeio.constants.RecipeListConstants.HELP_COMMAND;
-import static recipeio.constants.RecipeListConstants.MAX_RECIPES;
 import static recipeio.constants.RecipeListConstants.NO_RECIPES_ERROR_MESSAGE;
 
 
@@ -122,7 +121,6 @@ public class RecipeList {
      * @param userInput input from the user in the command line.
      */
     public void add(String userInput) {
-        assert(recipes.size() < MAX_RECIPES);
         try {
             Recipe newRecipe = parseAdd(userInput);
             AddRecipeCommand.execute(newRecipe, recipes);
