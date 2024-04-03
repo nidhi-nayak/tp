@@ -26,11 +26,11 @@ public class FilterByAllergyCommand {
                 .collect(Collectors.toList());
 
         if (matches.isEmpty()) {
-            System.out.println("\t" + RECIPES_INCLUDED + allergy);
+            System.out.println(RECIPES_INCLUDED + allergy);
             return;
         }
 
-        System.out.println("\t" + RECIPES_EXCLUDED + allergy);
+        System.out.println(RECIPES_EXCLUDED + allergy);
         UI.printRecipes(matches);
     }
 }
