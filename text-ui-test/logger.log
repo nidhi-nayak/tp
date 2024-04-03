@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-04-03T10:29:34.245851Z</date>
+  <millis>1712140174245</millis>
+  <nanos>851000</nanos>
+  <sequence>0</sequence>
+  <logger>RecipeIO Logger</logger>
+  <level>INFO</level>
+  <class>recipeio.RecipeIO</class>
+  <method>runCommandLoopUntilExitCommand</method>
+  <thread>1</thread>
+  <message>asking user for input</message>
+</record>
+</log>
