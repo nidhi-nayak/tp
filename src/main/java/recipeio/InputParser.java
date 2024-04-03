@@ -122,6 +122,7 @@ public class InputParser {
         ArrayList<String> allergiesList = new ArrayList<>(List.of(allergies));
         MealCategory category = MealCategory.valueOf(remainingInput[MEAL_CATEGORY_INDEX].trim().toUpperCase());
         String url = remainingInput[InputParserConstants.URL_INDEX].trim();
+        System.out.println(url);
         return new Recipe(recipeName, cookTime, calories, allergiesList, category, LocalDate.now(), url);
     }
 

@@ -43,8 +43,8 @@ public class CommandValidator {
             Integer.parseInt(input);
             return true;
         } catch (NumberFormatException e) {
-            System.out.println("\tParameter cannot be parsed as an integer.");
-            System.out.println("\tPlease enter an integer from 1 onwards.");
+            System.out.println("Parameter cannot be parsed as an integer.");
+            System.out.println("Please enter an integer from 1 onwards.");
             return false;
         }
     }
@@ -58,8 +58,8 @@ public class CommandValidator {
     public static boolean isWord(String input) {
         // Regular expression to match only alphabetic characters
         if (!input.matches(CommandValidatorConstants.MATCH_WORD_REGEX)){
-            System.out.println("\tParameter cannot be parsed as an word.");
-            System.out.println("\tPlease enter a word using lower and upper case alphabets.");
+            System.out.println("Parameter cannot be parsed as an word.");
+            System.out.println("Please enter a word using lower and upper case alphabets.");
             return false;
         }
         return true;
@@ -94,9 +94,9 @@ public class CommandValidator {
             LocalDate date = LocalDate.parse(input);
             return true;
         } catch (DateTimeParseException e) {
-            System.out.println("\tParameter cannot be parsed as a date.");
-            System.out.println("\tPlease enter a date in the format yyyy-MM-dd");
-            System.out.println("\t\tInput Example: find date 2024-03-28");
+            System.out.println("Parameter cannot be parsed as a date.");
+            System.out.println("Please enter a date in the format yyyy-MM-dd");
+            System.out.println("\tInput Example: find date 2024-03-28");
             return false;
         }
     }
@@ -109,8 +109,8 @@ public class CommandValidator {
      */
     public static boolean isWithinRange(ArrayList<Recipe> recipes, int index) {
         if (index > recipes.size() || index < MAX_RECIPES) {
-            System.out.println("\tSorry, there is no recipe at index: " + index);
-            System.out.println("\tYou currently have: " + recipes.size() + " recipes");
+            System.out.println("Sorry, there is no recipe at index: " + index);
+            System.out.println("You currently have: " + recipes.size() + " recipes");
             return false;
         }
         return true;
@@ -128,22 +128,16 @@ public class CommandValidator {
     public static boolean isValidDetailCommand(String userInput, ArrayList<Recipe> recipes) {
         String[] details = InputParser.parseDetails(userInput);
         if (details.length != VALID_DETAILS_LENGTH || details[INPUT_DETAILS_INDEX].isEmpty()) {
-            System.out.println("\tThe detail function takes in one parameter: {index}");
-            System.out.println("\t\tInput Example: detail 1");
+            System.out.println("The detail function takes in one parameter: {index}");
+            System.out.println("\tInput Example: detail 1");
             return false;
         }
         if (!isParsableAsInteger(details[INPUT_DETAILS_INDEX])) {
-            System.out.println("\t\tInput Example: detail 1");
+            System.out.println("\tInput Example: detail 1");
             return false;
         }
         Integer index = InputParser.parseID(userInput);
-        if (index == null) {
-            return false;
-        }
-        if (!CommandValidator.isWithinRange(recipes, index)) {
-            return false;
-        }
-        return true;
+        return checkIndex(index, recipes);
     }
 
     /**
@@ -158,15 +152,19 @@ public class CommandValidator {
     public static boolean isValidDeleteCommand(String userInput, ArrayList<Recipe> recipes) {
         String[] details = InputParser.parseDetails(userInput);
         if (details.length != VALID_DELETE_LENGTH || details[INPUT_DETAILS_INDEX].isEmpty()) {
-            System.out.println("\tThe delete function takes in one parameter: {index}");
-            System.out.println("\t\tInput Example: delete 1");
+            System.out.println("The delete function takes in one parameter: {index}");
+            System.out.println("\tInput Example: delete 1");
             return false;
         }
         if (!isParsableAsInteger(details[INPUT_DETAILS_INDEX])) {
-            System.out.println("\t\tInput Example: delete 1");
+            System.out.println("\tInput Example: delete 1");
             return false;
         }
         Integer index = InputParser.parseID(userInput);
+        return checkIndex(index, recipes);
+    }
+
+    public static boolean checkIndex(Integer index, ArrayList<Recipe> recipes) {
         if (index == null) {
             return false;
         }
@@ -185,9 +183,9 @@ public class CommandValidator {
     public static boolean isValidFindCommand(String userInput) {
         String[] details = InputParser.parseDetails(userInput);
         if (details.length != VALID_FIND_LENGTH) {
-            System.out.println("\tThe find function accepts two parameters: {type} and {criteria}");
-            System.out.println("\t\tInput Example: find kw pizza");
-            System.out.println("\t\tInput Example: find date 2024-03-28");
+            System.out.println("The find function accepts two parameters: {type} and {criteria}");
+            System.out.println("\tInput Example: find kw pizza");
+            System.out.println("\tInput Example: find date 2024-03-28");
             return false;
         }
         return true;
@@ -203,12 +201,12 @@ public class CommandValidator {
     public static boolean isValidFilterCommand(String userInput) {
         String[] details = InputParser.parseDetails(userInput);
         if (details.length != VALID_FILTER_LENGTH || details[INPUT_DETAILS_INDEX].isEmpty()) {
-            System.out.println("\tThe filter function takes in one parameter: {allergy}");
-            System.out.println("\t\tInput Example: filter dairy");
+            System.out.println("The filter function takes in one parameter: {allergy}");
+            System.out.println("\tInput Example: filter dairy");
             return false;
         }
         if (!isWord(details[INPUT_DETAILS_INDEX])) {
-            System.out.println("\t\tInput Example: filter dairy");
+            System.out.println("\tInput Example: filter dairy");
             return false;
         }
         return true;

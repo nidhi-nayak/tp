@@ -8,5 +8,5 @@ public class RecipeListConstants {
     public static final String FIND_COMMAND = "find";
     public static final String FILTER_COMMAND = "filter";
     public static final String DETAIL_COMMAND = "detail";
-    public static final String NO_RECIPES_ERROR_MESSAGE = "\tSorry, you have no recipes. Try adding some!";
+    public static final String NO_RECIPES_ERROR_MESSAGE = "Sorry, you have no recipes. Try adding some!";
 }

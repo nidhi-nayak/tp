@@ -2,3 +2,7 @@ pizza | 34 mins | 340 kcals | eggs | DINNER | 2024-04-03 | dinner
 pizza | 34 mins | 340 kcals | eggs | DINNER | 2024-04-03 | dinner
 pizza | 34 mins | 340 kcals | eggs | DINNER | 2024-04-03 | dinner
 pizza | 34 mins | 340 kcals | eggs | DINNER | 2024-04-03 | dinner
+name | 34 mins | 340 kcals | allergies | DINNER | 2024-04-03 | dinner
+newrecipe | 34 mins | 340 kcals | egg | DINNER | 2024-04-03 | dinner
+pizza | 34 mins | 340 kcals | egg | DINNER | 2024-04-03 | www.food.com
+pizza | 34 mins | 340 kcals | allergy | DINNER | 2024-04-03 | url
