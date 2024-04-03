@@ -109,6 +109,7 @@ public class InputParser {
         // Ignore the first word and join the remaining words into a string
         //add pizza/34/340/eggs/dinner/www.food.com
         String[] remainingInput = parseDetails(userInput);
+        System.out.println("remainingInput: " + remainingInput[0] + remainingInput[1]);
         assert remainingInput.length > 0;
         checkCorrectAddFormat(remainingInput);
         String recipeName = remainingInput[InputParserConstants.RECIPE_NAME_INDEX].trim();
@@ -125,14 +126,12 @@ public class InputParser {
         if (remainingInput.length != InputParserConstants.TOTAL_INGREDIENTS_INDEX) {
             throw new Exception(InputParserConstants.INVALID_TASK_FORMAT_ERROR_MESSAGE);
         }
-
         try {
             Integer.parseInt(remainingInput[InputParserConstants.COOK_TIME_INDEX].trim());
             Integer.parseInt(remainingInput[InputParserConstants.CALORIES_INDEX].trim());
         } catch (NumberFormatException e){
             throw new Exception(InputParserConstants.INTEGER_NEEDED_ERROR_MESSAGE);
         }
-
         try {
             MealCategory.valueOf(remainingInput[MEAL_CATEGORY_INDEX].trim().toUpperCase());
         } catch (IllegalArgumentException e) {
