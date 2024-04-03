@@ -30,5 +30,5 @@ public class InputParserConstants {
 
     public static final String MEAL_CATEGORY_ERROR_MESSAGE = "Please enter a valid meal category. Here are your" +
             "options:\n BREAKFAST, LUNCH, DINNER, APPETIZER, DESSERT";
-    public static final String RECIPE_DELIMETER = "\\";
+    public static final String RECIPE_DELIMETER = ",";
 }

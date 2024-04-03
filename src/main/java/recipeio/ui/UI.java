@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
-    public static final String SEPARATOR = "-----------------------------";
+    public static final String SEPARATOR = "--------------------------------";
 
     private final Scanner in;
 
@@ -30,8 +30,6 @@ public class UI {
         printLine();
         System.out.println("Enter command:");
         String fullInputLine = in.nextLine();
-
-        System.out.println("[Command entered: " + fullInputLine + "]");
         printLine();
         return fullInputLine;
     }
@@ -99,8 +97,8 @@ public class UI {
         System.out.println("\thelp: shows available commands\n");
         System.out.println("\tlist: shows you list of recipes");
         System.out.println("\t\tInput Example: list\n");
-        System.out.println("\tadd NAME/MINUTES/KCALS/ALLERGIES/CATEGORY/URL: adds a recipe");
-        System.out.println("\t\tInput Example: add pizza/34/340/eggs/dinner/www.food.com\n");
+        System.out.println("\tadd NAME,MINUTES,KCALS,SINGULAR TENSE ALLERGIES,CATEGORY,URL: adds a recipe");
+        System.out.println("\t\tInput Example: add pizza/34/340/egg/dinner/www.food.com\n");
         System.out.println("\tdelete LIST_NUMBER: deletes a recipe at a given index");
         System.out.println("\t\tInput Example: delete 1\n");
         System.out.println("\tfind kw KEYWORD: finds recipes with a given keyword");

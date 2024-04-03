@@ -16,6 +16,8 @@ import static recipeio.constants.InputParserConstants.FIND_TYPE_INDEX;
 import static recipeio.constants.InputParserConstants.FIND_CRITERIA_INDEX;
 import static recipeio.constants.InputParserConstants.FIND_ALLERGY_INDEX;
 import static recipeio.constants.InputParserConstants.MEAL_CATEGORY_INDEX;
+import static recipeio.constants.InputParserConstants.RECIPE_DELIMETER;
+import static recipeio.constants.InputParserConstants.USER_INPUT_INDEX;
 
 /**
  * Methods to parse input by the user.
@@ -104,14 +106,15 @@ public class InputParser {
         return mealCategory;
     }
 
-    public static Recipe parseAdd(String userInput) throws Exception{
-        String[] words = userInput.trim().split(" ");
-        // Ignore the first word and join the remaining words into a string
-        //add pizza/34/340/eggs/dinner/www.food.com
-        String[] remainingInput = parseDetails(userInput);
-        System.out.println("remainingInput: " + remainingInput[0] + remainingInput[1]);
-        assert remainingInput.length > 0;
+    public static Recipe parseAdd(String userInput) throws Exception {
+        String[] words = userInput.trim().split(" ", 2);
+        String[] remainingInput = words[USER_INPUT_INDEX].trim().split(RECIPE_DELIMETER);
+        assert remainingInput.length > 0 : "Add additional parameters to add command";
         checkCorrectAddFormat(remainingInput);
+        return breakUpRemainingInput(remainingInput);
+    }
+
+    public static Recipe breakUpRemainingInput(String[] remainingInput) {
         String recipeName = remainingInput[InputParserConstants.RECIPE_NAME_INDEX].trim();
         int cookTime = Integer.parseInt(remainingInput[InputParserConstants.COOK_TIME_INDEX].trim());
         int calories = Integer.parseInt(remainingInput[InputParserConstants.CALORIES_INDEX].trim());

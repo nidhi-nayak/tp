@@ -20,7 +20,10 @@ public class ListRecipeCommand {
             return;
         }
         System.out.println(RECIPE_SUMMARY);
-        recipes.forEach(recipe -> System.out.println("\t\t" + recipe));
+        for (int i = 0; i < recipes.size(); i ++) {
+            int printNumber = i + 1;
+            System.out.println("\t\t" + printNumber + ". " + recipes.get(i));
+        }
         System.out.println(RECIPE_DETAILS_PROMPT);
     }
 }
